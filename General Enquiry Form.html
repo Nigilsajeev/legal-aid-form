@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Enquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>General Enquiry Form</h2>
+<p>Please fill out this form to help us assist you better.</p>
+
+<form action="/submit_form" method="post" enctype="multipart/form-data">
+    <!-- Section 1: Personal Information -->
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="nationality">Nationality:</label>
+    <input type="text" id="nationality" name="nationality" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="passportNumber">Passport Number:</label>
+    <input type="text" id="passportNumber" name="passportNumber" required>
+
+    <label for="iqamaNumber">Iqama Number:</label>
+    <input type="text" id="iqamaNumber" name="iqamaNumber" required>
+
+    <!-- Section 2: Contact Information -->
+    <label for="phone">Phone Number (KSA):</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="address">Current Address in KSA:</label>
+    <textarea id="address" name="address" rows="3" required></textarea>
+
+    <!-- Section 3: Employment Details -->
+    <label for="employer">Employer/Company Name:</label>
+    <input type="text" id="employer" name="employer" required>
+
+    <label for="jobTitle">Job Title/Occupation:</label>
+    <input type="text" id="jobTitle" name="jobTitle" required>
+
+    <label for="employmentStatus">Employment Status:</label>
+    <select id="employmentStatus" name="employmentStatus" required>
+        <option value="active">Active</option>
+        <option value="terminated">Terminated</option>
+    </select>
+
+    <!-- Section 4: Legal Issue Details -->
+    <label>Type of Legal Issue:</label>
+    <select id="legalIssue" name="legalIssue[]" multiple required>
+        <option value="labor_dispute">Labor Dispute</option>
+        <option value="sponsorship_transfer">Sponsorship Transfer</option>
+        <option value="termination_without_cause">Termination without Cause</option>
+        <option value="contract_violation">Contract Violation</option>
+        <option value="non_payment">Non-Payment of Salary</option>
+        <option value="residency_issues">Immigration/Residency Issues</option>
+        <option value="other">Other (Please specify in description)</option>
+    </select>
+
+    <label for="issueDescription">Brief Description of the Issue:</label>
+    <textarea id="issueDescription" name="issueDescription" rows="4" required></textarea>
+
+    <!-- Section 5: Documentation -->
+    <label for="documents">Attach Relevant Documents:</label>
+    <input type="file" id="documents" name="documents[]" multiple>
+
+    <!-- Section 6: Terms and Conditions -->
+    <p>
+        <input type="checkbox" id="terms" name="terms" required>
+        I agree that the information provided is accurate, and I consent to its use for legal aid purposes. I understand submitting this form does not guarantee legal representation.
+    </p>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
